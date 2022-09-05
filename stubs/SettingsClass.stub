@@ -1,0 +1,15 @@
+<?php
+
+namespace Modules\{{ moduleName }}\Settings;
+
+use Spatie\LaravelSettings\Settings;
+
+class {{ settingName }}Settings extends Settings
+{
+    public string ${{ settingField }}_name = '';
+
+    public static function group(): string
+    {
+        return '{{ settingField }}';
+    }
+}

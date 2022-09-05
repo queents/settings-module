@@ -1,12 +1,35 @@
 {
-    "name": "nwidart/settings",
-    "description": "",
+    "name": "queents/settings-module",
+    "description": "VILT framework Settings module GUI to save key and value on database and cache it",
+    "type": "laravel-module",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "VILT",
+        "base",
+        "resource",
+        "page",
+        "setting",
+        "key-value",
+        "setting GUI",
+        "admin panel",
+        "admin one",
+        "vuejs",
+        "ineriajs",
+        "tailwind.css"
+    ],
+    "homepage": "https://www.queentechsolutions.net",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Fady Mondy",
+            "email": "info@3x1.io",
+            "role": "Senior Fullstack Developer"
         }
     ],
+    "require": {
+        "spatie/laravel-settings": "^2.4",
+        "spatie/laravel-sitemap": "^6.2"
+    },
     "extra": {
         "laravel": {
             "providers": [],

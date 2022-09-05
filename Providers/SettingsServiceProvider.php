@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
 use Modules\Base\Services\Components\Base\Lang;
 use Modules\Base\Services\Core\VILT;
+use Modules\Settings\Console\GenerateSettings;
 
 include __DIR__ . '/helpers.php';
 
@@ -37,6 +38,10 @@ class SettingsServiceProvider extends ServiceProvider
         VILT::registerTranslation(Lang::make('site_settings.sidebar')->label(__('Site Settings')));
         VILT::registerTranslation(Lang::make('google_settings.sidebar')->label(__('Google Settings')));
         VILT::registerTranslation(Lang::make('email_settings.sidebar')->label(__('Email Settings')));
+
+        $this->commands([
+            GenerateSettings::class
+        ]);
     }
 
     /**

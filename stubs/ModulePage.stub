@@ -1,0 +1,24 @@
+<?php
+
+namespace Modules\{{ moduleName }}\Pages;
+
+use Modules\{{ moduleName }}\Settings\{{ settingClass }};
+use Modules\Base\Services\Rows\Text;
+use Modules\Settings\Services\Setting;
+
+
+class {{ settingName }}SettingsPage extends Setting
+{
+    public ?string $setting = {{ settingClass }}::class;
+    public ?bool $api = true;
+    public ?string $path = "{{ settingField }}";
+    public ?string $group = "Settings";
+    public ?string $icon = "bx bxs-circle";
+
+    public  function rows(): array
+    {
+        return [
+            Text::make('{{ settingField }}_name')->label(__('{{ settingName }} Name')),
+        ];
+    }
+}

@@ -1,8 +1,22 @@
 {
     "name": "Settings",
     "alias": "settings",
-    "description": "",
-    "keywords": [],
+    "description": "VILT framework Settings module GUI to save key and value on database and cache it",
+    "keywords": [
+        "laravel",
+        "VILT",
+        "base",
+        "resource",
+        "page",
+        "setting",
+        "key-value",
+        "setting GUI",
+        "admin panel",
+        "admin one",
+        "vuejs",
+        "ineriajs",
+        "tailwind.css"
+    ],
     "priority": 6,
     "providers": [
         "Modules\\Settings\\Providers\\SettingsServiceProvider"
