@@ -21,6 +21,18 @@ Make a migration
 php artisan migrate
 ```
 
+Publish Assets
+
+```bash
+npm i & npm run build
+```
+
+OR
+
+```bash
+yarn & yarn build
+```
+
 to create a new settings page you can use this command
 
 ```bash
