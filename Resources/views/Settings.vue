@@ -47,6 +47,21 @@ function openModal(name, id = null){
     actionModal.value[name] = !actionModal.value[name];
 }
 
+function modalActionRun(modal, action) {
+    if (selectedID.value) {
+        modalAction.value[modal].id = selectedID.value;
+    }
+    let form = useForm(modalAction.value[modal]);
+    Inertia.post(route(action), form,{
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset();
+            actionModal.value[modal] = false;
+            success();
+        },
+    });
+}
+
 function openUrl(url){
     window.open(url);
 }
