@@ -27,6 +27,7 @@
         }
     ],
     "require": {
+        "queents/vilt": "^1.0",
         "spatie/laravel-settings": "^2.4",
         "spatie/laravel-sitemap": "^6.2"
     },

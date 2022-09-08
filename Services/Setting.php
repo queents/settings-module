@@ -57,9 +57,21 @@ class Setting extends Page
          */
         return Render::make('Settings')->module('Settings')->data([
             "rows" => $this->beforeLoad($request, $rows),
-            "lang" => $this->loadTranslations(),
-            "components" => $this->components(),
-            "table" => $this->table
+            "roles" => [
+                "view" => $this->canView,
+                "viewAny" => $this->canViewAny,
+                "edit" => $this->canEdit,
+                "create" => $this->canCreate,
+                "delete" => $this->canDelete,
+                "deleteAny" => $this->canDeleteAny,
+            ],
+            "render" => [
+                "components" => $this->components(),
+                "lang" => $this->loadTranslations(),
+            ],
+            "list" => [
+                "url" => "admin.settings.".$this->table
+            ]
         ])->render();
     }
 
