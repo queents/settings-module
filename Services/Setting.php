@@ -142,6 +142,9 @@ class Setting extends Page
                 /*
                  * Save a col if has data
                  */
+                else if($item->vue === 'ViltSwitch.vue'){
+                    $settings->{$item->name} = (bool)$request->get($item->name);
+                }
                 else {
                     if($request->has($item->name) && ((!empty($request->get($item->name))) || is_array($request->get($item->name)))){
                         $settings->{$item->name} = $request->get($item->name);
