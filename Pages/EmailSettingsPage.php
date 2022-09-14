@@ -17,7 +17,7 @@ class EmailSettingsPage extends Setting {
     public ?bool $api = true;
     public ?string $path = "email_settings";
     public ?string $group = "Settings";
-    public ?string $icon = "bx bxs-envelope";
+    public ?string $icon = "bx bx-envelope";
 
     public  function rows(): array
     {

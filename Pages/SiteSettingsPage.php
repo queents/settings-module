@@ -18,7 +18,7 @@ class SiteSettingsPage extends Setting {
     public ?bool $api = true;
     public ?string $path = "site_settings";
     public ?string $group = "Settings";
-    public ?string $icon = "bx bxs-cog";
+    public ?string $icon = "bx bx-cog";
 
     public  function rows(): array
     {
