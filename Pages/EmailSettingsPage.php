@@ -7,7 +7,7 @@ use Modules\Base\Services\Components\Base\Action;
 use Modules\Base\Services\Components\Base\AddRoute;
 use Modules\Base\Services\Components\Base\Alert;
 use Modules\Base\Services\Rows\Text;
-use Modules\Notifications\Helpers\SendNotification;
+use Modules\Notifications\Services\SendNotification;
 use Modules\Settings\Services\Setting;
 use Modules\Settings\Settings\EmailSettings;
 
