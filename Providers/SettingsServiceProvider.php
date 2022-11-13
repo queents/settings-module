@@ -4,6 +4,7 @@ namespace Modules\Settings\Providers;
 
 
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Modules\Base\Services\Components\Base\Lang;
 use Modules\Base\Services\Core\VILT;
@@ -34,6 +35,23 @@ class SettingsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
         VILT::loadPages($this->moduleName);
+
+        Config::set('mail.mailers.smtp', [
+            'transport' => 'smtp',
+            'host' => setting('email.host'),
+            'port' => setting('email.port'),
+            'encryption' => setting('email.encryption'),
+            'username' => setting('email.username'),
+            'password' => setting('email.password'),
+            'timeout' => null,
+            'auth_mode' => null,
+        ]);
+
+        Config::set('mail.from', [
+            'address' => setting('email.from'),
+            'name' => setting('email.from.name'),
+        ]);
+
 
         VILT::registerTranslation(Lang::make('site_settings.sidebar')->label(__('Site Settings')));
         VILT::registerTranslation(Lang::make('google_settings.sidebar')->label(__('Google Settings')));
