@@ -173,7 +173,7 @@ class Setting extends Page
 
     public function routes()
     {
-        return Router::make($this->path)->controller(static::class)->custom($this->route())->api($this->api)->settings(true)->get();
+        return Router::make($this->path)->middleware(['auth:sanctum'])->controller(static::class)->custom($this->route())->api($this->api)->settings(true)->get();
     }
 
     public function menus(): array
