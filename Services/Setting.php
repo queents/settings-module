@@ -24,6 +24,17 @@ class Setting extends Page
     public function index(Request $request): \Illuminate\Http\JsonResponse|\Inertia\Response
     {
         /*
+         * Check if the user has permission to view the resource
+         */
+        $this->loadRoles();
+        /*
+         * Check if the user has permission or redirect 403
+         */
+        if ($this->checkRoles('canView') && !$this->isAPI($request)) {
+            return $this->checkRoles('canView');
+        }
+
+        /*
          * Get Setting Class
          */
         $settings = new $this->setting();
@@ -179,7 +190,7 @@ class Setting extends Page
     public function menus(): array
     {
         $menus = [
-             Menu::make(Str::ucfirst($this->table))->group($this->group)->label($this->table . '.sidebar')->icon($this->icon)->route('admin.settings.'.$this->table . '.index')->can(true)
+             Menu::make(Str::ucfirst($this->table))->group($this->group)->label($this->table . '.sidebar')->icon($this->icon)->route('admin.settings.'.$this->table . '.index')->can('view_'.$this->table)
         ];
         return array_merge($menus, $this->menu());
     }
